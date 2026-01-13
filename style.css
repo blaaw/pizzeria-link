@@ -16,7 +16,6 @@
     --spacin1: 12px;
     --spacin2: 16px;
     --spacin3: 20px;
-    --spacin4: 24px;
 }
 
 body {
@@ -60,23 +59,26 @@ img {
 
 button {
     padding: var(--spacin1) var(--spacin2);
-    margin: 0 var(--spacin1);
     background: var(--color4);
     color: var(--color2);
-    transition: 0.2s;
 }
 
 button:hover {
     background: var(--color5);
     color: var(--color4);
 }
-
+.butons {
+    display: flex;
+    gap: var(--spacin3);
+    justify-content: center;
+    flex-wrap: wrap;
+}
 section {
     border: 3px solid var(--color3);
     padding: var(--spacin1);
     margin: var(--spacin1);
     display: flex;
-    gap: var(--spacin2);
+    gap: var(--spacin1);
 }
 
 .options {
