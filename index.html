@@ -5,139 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizzeria Link</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: monospace;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        :root {
-            scrollbar-width: none;
-            scroll-behavior: smooth;
-            --color1: #dda15e;
-            --color2: #F58549;
-            --color3: #772F1A;
-            --color4: #49431d;
-            --color5: #75752F;
-            --spacin1: 12px;
-            --spacin2: 16px;
-            --spacin3: 20px;
-            --spacin4: 24px;
-        }
-
-        body {
-            background: var(--color1);
-            color: var(--color3);
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        main {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: var(--color3);
-        }
-
-        p {
-            color: var(--color3);
-            font-weight: 600;
-        }
-
-        i {
-            color: var(--color4);
-            font-weight: 700;
-        }
-        img {
-            width: 30vw;
-            position: absolute;
-            bottom: 0;
-        }
-
-        button {
-            padding: var(--spacin1) var(--spacin2);
-            margin: 0 var(--spacin1);
-            background: var(--color4);
-            color: var(--color2);
-            transition: 0.2s;
-        }
-
-        button:hover {
-            background: var(--color5);
-            color: var(--color4);
-        }
-
-        section {
-            border: 3px solid var(--color3);
-            padding: var(--spacin1);
-            margin: var(--spacin1);
-            display: flex;
-            gap: var(--spacin2);
-        }
-
-        .options {
-            background: var(--color2);
-            padding: var(--spacin1);
-            min-height: 15vh;
-        }
-        .options:hover {
-            background: var(--color4);
-        }
-        .options:hover h2, .options:hover i {
-            color: var(--color1);
-        }
-    </style>
 </head>
 
 <body>
-    
+
     <img src="link.webp" alt="link-image">
     <main>
         <h1>Pizzería<i>LINK</i></h1>
         <p>Un juego, un simulador de pedidos.</p>
         <p>by Beckham I. Lawrence, 2026</p>
-        <section>
-            <div class="options">
-                <h2>Pizza</h2>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
+
+        <section id="pizzas">
+            <div class="options" id="Pepperoni">
+                <h2>Pizza Pepperoni</h2>
+                <i>Lorem ipsum dolor sit amet.</i>
             </div>
-            <div class="options">
-                <h2>Pizza</h2>
+            <div class="options" id="Quesos">
+                <h2>Pizza Cuatro Quesos</h2>
                 <i>Lorem ipsum dolor sit.</i>
             </div>
-            <div class="options">
-                <h2>Pizza</h2>
+            <div class="options" id="Barbacoa">
+                <h2>Pizza Barbacoa</h2>
+                <i>Lorem ipsum dolor sit amet.</i>
+            </div>
+            <div class="options" id="Vegetariana">
+                <h2>Pizza Vegetariana</h2>
                 <i>Lorem ipsum dolor sit amet.</i>
             </div>
         </section>
-        <section>
-            <div class="options">
-                <h2>Tamaño</h2>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
+        <section id="tamaños">
+            <div class="options" id="Personal">
+                <h2>Tamaño Personal</h2>
+                <i>Lorem ipsum dolor sit amet.</i>
             </div>
-            <div class="options">
-                <h2>Tamaño</h2>
+            <div class="options" id="Mediana">
+                <h2>Tamaño Mediana</h2>
                 <i>Lorem ipsum dolor sit.</i>
             </div>
-            <div class="options">
-                <h2>Tamaño</h2>
+            <div class="options" id="Familiar">
+                <h2>Tamaño Familiar</h2>
                 <i>Lorem ipsum dolor sit amet.</i>
             </div>
         </section>
+        <section id="pedido"></section>
         <div class="butons">
-            <button>Button</button><button>Button</button>
+            <button id="borrar">Borrar Pedido</button><button>Eliminar Última Pizza</button><button>Eliminar Tamaño</button>
         </div>
+        <script src="main.js"></script>
     </main>
 </body>
 

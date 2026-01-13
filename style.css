@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+:root {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    --color1: #dda15e;
+    --color2: #F58549;
+    --color3: #772F1A;
+    --color4: #49431d;
+    --color5: #75752F;
+    --spacin1: 12px;
+    --spacin2: 16px;
+    --spacin3: 20px;
+    --spacin4: 24px;
+}
+
+body {
+    background: var(--color1);
+    color: var(--color3);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color3);
+}
+
+p {
+    color: var(--color3);
+    font-weight: 600;
+}
+
+i {
+    color: var(--color4);
+    font-weight: 700;
+}
+
+img {
+    width: 30vw;
+    position: absolute;
+    bottom: 0;
+}
+
+button {
+    padding: var(--spacin1) var(--spacin2);
+    margin: 0 var(--spacin1);
+    background: var(--color4);
+    color: var(--color2);
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--color5);
+    color: var(--color4);
+}
+
+section {
+    border: 3px solid var(--color3);
+    padding: var(--spacin1);
+    margin: var(--spacin1);
+    display: flex;
+    gap: var(--spacin2);
+}
+
+.options {
+    background: var(--color2);
+    padding: var(--spacin1);
+    min-height: 10vh;
+}
+
+.options:hover {
+    background: var(--color4);
+}
+
+.options:hover h2,
+.options:hover i,
+.options:hover p {
+    color: var(--color1);
+}
