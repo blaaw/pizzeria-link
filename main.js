@@ -50,5 +50,7 @@ ques.addEventListener("dblclick", selectorPizza);
 function borrarPedidoCompleto() {
     seccionPedidos.innerHTML = "";
     seccionPedidos.style.display = "none";
+    pizza = 0, precioTotal = 0;
+
 }
 document.getElementById("borrar").addEventListener("dblclick", borrarPedidoCompleto)
