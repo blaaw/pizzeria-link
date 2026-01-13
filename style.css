@@ -7,7 +7,6 @@
 
 :root {
     scrollbar-width: none;
-    scroll-behavior: smooth;
     --color1: #dda15e;
     --color2: #F58549;
     --color3: #772F1A;
@@ -21,14 +20,13 @@
 body {
     background: var(--color1);
     color: var(--color3);
-    width: 100vw;
-    height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 main {
-    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,6 +53,7 @@ img {
     width: 30vw;
     position: absolute;
     bottom: 0;
+    left: 0;
 }
 
 button {
@@ -85,6 +84,7 @@ section {
     background: var(--color2);
     padding: var(--spacin1);
     min-height: 10vh;
+    user-select: none;
 }
 
 .options:hover {
