@@ -14,8 +14,10 @@ seccionTamaño.style.display = "none";
 seccionPedidos.style.display = "none";
 
 const preciosPizzas = [6, 7, 9, 10];
+const preciosTam = [2, 4];
 let precio, precioTotal = 0;
 let pizza = 0;
+let pedido = 0;
 
 function selectorPizza(event) {
     const pizzaClickeada = event.currentTarget.id;
@@ -52,27 +54,9 @@ vege.addEventListener("dblclick", selectorPizza);
 pepp.addEventListener("dblclick", selectorPizza);
 ques.addEventListener("dblclick", selectorPizza);
 
-function borrarPedidoCompleto() {
-    seccionPedidos.innerHTML = "";
-    seccionPedidos.style.display = "none";
-    seccionTamaño.style.display = "none";
-seccionOpe.style.display = "none";
-    seccionOpeTamaño.innerHTML = "";
-    pizza = 0, precioTotal = 0;
-
-}
-document.getElementById("borrar").addEventListener("dblclick", borrarPedidoCompleto)
-
-function añadirTamaño() {
-    if (precio > 0){
-    seccionTamaño.style.display = "flex";
-    } else {
-        //no hace nada
-    }
-}
-document.getElementById("add-size").addEventListener("dblclick", añadirTamaño)
-
-function selecionarTamaño(event){
+//variables aux para confirmar pedidos
+let auxTamaño, auxPrecio;
+function selecionarTamaño(event) {
     let nuevoprecio;
     const tamañoClickeado = event.currentTarget.id;
     seccionOpeTamaño.style.display = "block";
@@ -81,18 +65,51 @@ function selecionarTamaño(event){
             seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>sin costo adicional</i><br><i>Precio Total pedido: ${precioTotal}€</i>`;
             break;
         case "Mediana":
-            const precioMediana = 2;
-            nuevoprecio = precioTotal + (precioMediana * pizza);
-            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${precioMediana}€</i><br><i>Precio Total pedido: ${nuevoprecio}€</i>`;
+            nuevoprecio = precioTotal + (preciosTam[0] * pizza);
+            auxPrecio = nuevoprecio;
+            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${preciosTam[0]}€</i><br><i>Precio Total pedido: ${nuevoprecio}€</i>`;
             break;
         case "Familiar":
-            const precioFamiliar = 4;
-            nuevoprecio = precioTotal + (precioFamiliar * pizza);
-            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${precioFamiliar}€</i><br><i>Precio Total pedido: ${nuevoprecio}€</i>`;
+            nuevoprecio = precioTotal + (preciosTam[1] * pizza);
+            auxPrecio = nuevoprecio;
+            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${preciosTam[1]}€</i><br><i>Precio Total pedido: ${nuevoprecio}€</i>`;
             break;
         default:
     }
+    auxTamaño = tamañoClickeado;
 }
-pers.addEventListener("dblclick", selecionarTamaño);
-medi.addEventListener("dblclick", selecionarTamaño);
-fami.addEventListener("dblclick", selecionarTamaño);
+pers.addEventListener("click", selecionarTamaño);
+medi.addEventListener("click", selecionarTamaño);
+fami.addEventListener("click", selecionarTamaño);
+
+function borrarPedidoCompleto() {
+    seccionPedidos.innerHTML = "";
+    seccionPedidos.style.display = "none";
+    seccionTamaño.style.display = "none";
+    seccionOpe.style.display = "none";
+    seccionOpeTamaño.innerHTML = "";
+    pizza = 0, precioTotal = 0;
+
+}
+document.getElementById("borrar").addEventListener("dblclick", borrarPedidoCompleto)
+
+function añadirTamaño() {
+    if (pizza > 0) {
+        seccionTamaño.style.display = "flex";
+    }
+}
+document.getElementById("add-size").addEventListener("click", añadirTamaño)
+
+function completarPedido() {
+    pedido++;
+    if (pizza > 0) {
+        alert("Pedido confirmado con éxito!");
+        if (seccionOpeTamaño.innerHTML == "") {
+            document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza}</i><h3>Precio Total: ${precioTotal}€</h3></section>`);
+        } else {
+            document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section  style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza} -</i> <i>Tamaño ${auxTamaño}</i><h3>Precio Total: ${auxPrecio}€</h3></section>`);
+        }
+        borrarPedidoCompleto();
+    }
+}
+document.getElementById("confirmar").addEventListener("dblclick", completarPedido);
