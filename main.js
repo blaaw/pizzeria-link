@@ -101,8 +101,8 @@ function añadirTamaño() {
 document.getElementById("add-size").addEventListener("click", añadirTamaño)
 
 function completarPedido() {
-    pedido++;
     if (pizza > 0) {
+        pedido++;
         alert("Pedido confirmado con éxito!");
         if (seccionOpeTamaño.innerHTML == "") {
             document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza} - Tamaño Personal</i><h3>Precio Total: ${precioTotal}€</h3></section>`);
