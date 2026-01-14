@@ -67,6 +67,8 @@ document.getElementById("borrar").addEventListener("dblclick", borrarPedidoCompl
 function añadirTamaño() {
     if (precio > 0){
     seccionTamaño.style.display = "flex";
+    } else {
+        //no hace nada
     }
 }
 document.getElementById("add-size").addEventListener("dblclick", añadirTamaño)
@@ -77,17 +79,17 @@ function selecionarTamaño(event){
     seccionOpeTamaño.style.display = "block";
     switch (tamañoClickeado) {
         case "Personal":
-            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>sin costo adicional</i><br><i>Precio Total pedido: ${precioTotal}</i>`;
+            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>sin costo adicional</i><br><i>Precio Total pedido: ${precioTotal}€</i>`;
             break;
         case "Mediana":
             const precioMediana = 2;
             nuevoprecio = precioTotal + (precioMediana * pizza);
-            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${precioMediana}</i><br><i>Precio Total pedido: ${nuevoprecio}</i>`;
+            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${precioMediana}</i><br><i>Precio Total pedido: ${nuevoprecio}€</i>`;
             break;
         case "Familiar":
             const precioFamiliar = 4;
             nuevoprecio = precioTotal + (precioFamiliar * pizza);
-            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${precioFamiliar}</i><br><i>Precio Total pedido: ${nuevoprecio}</i>`;
+            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${precioFamiliar}</i><br><i>Precio Total pedido: ${nuevoprecio}€</i>`;
             break;
         default:
     }
