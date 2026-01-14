@@ -83,12 +83,12 @@ function selecionarTamaño(event){
         case "Mediana":
             const precioMediana = 2;
             nuevoprecio = precioTotal + (precioMediana * pizza);
-            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${precioMediana}</i><br><i>Precio Total pedido: ${nuevoprecio}€</i>`;
+            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${precioMediana}€</i><br><i>Precio Total pedido: ${nuevoprecio}€</i>`;
             break;
         case "Familiar":
             const precioFamiliar = 4;
             nuevoprecio = precioTotal + (precioFamiliar * pizza);
-            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${precioFamiliar}</i><br><i>Precio Total pedido: ${nuevoprecio}€</i>`;
+            seccionOpeTamaño.innerHTML = `<h3>Tamaño selecionado: ${tamañoClickeado}</h3> <i>Precio adicional por pizza: ${precioFamiliar}€</i><br><i>Precio Total pedido: ${nuevoprecio}€</i>`;
             break;
         default:
     }
