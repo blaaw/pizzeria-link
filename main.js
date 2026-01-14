@@ -105,7 +105,7 @@ function completarPedido() {
     if (pizza > 0) {
         alert("Pedido confirmado con éxito!");
         if (seccionOpeTamaño.innerHTML == "") {
-            document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza}</i><h3>Precio Total: ${precioTotal}€</h3></section>`);
+            document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza} - Tamaño Personal</i><h3>Precio Total: ${precioTotal}€</h3></section>`);
         } else {
             document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section  style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza} -</i> <i>Tamaño ${auxTamaño}</i><h3>Precio Total: ${auxPrecio}€</h3></section>`);
         }
