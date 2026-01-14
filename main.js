@@ -14,7 +14,6 @@ seccionTamaño.style.display = "none";
 seccionPedidos.style.display = "none";
 
 const preciosPizzas = [6, 7, 9, 10];
-const preciosTamaño = [0, 3, 5]
 let precio, precioTotal = 0;
 let pizza = 0;
 
