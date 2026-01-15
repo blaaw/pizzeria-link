@@ -18,7 +18,8 @@ const preciosTam = [2, 4];
 let precio, precioTotal = 0;
 let pizza = 0;
 let pedido = 0;
-
+//variables aux para confirmar pedidos
+let auxTamaño, auxPrecio;
 function selectorPizza(event) {
     const pizzaClickeada = event.currentTarget.id;
     pizza++;
@@ -48,14 +49,15 @@ function selectorPizza(event) {
     }
     precioTotal += precio;
     seccionPedidos.insertAdjacentHTML("beforeend", `<i>Pizzas selecionadas: ${pizza} <br> Precio Total Pedido: ${precioTotal}€ <br>-------------------</i>`);
+    if (auxTamaño !== undefined) {
+        selecionarTamaño({ currentTarget: { id: auxTamaño } }); //1 linea, multiples horas, logica descuierta, pero no aplicacion, fuck js
+    }
 }
 barb.addEventListener("click", selectorPizza);
 vege.addEventListener("click", selectorPizza);
 pepp.addEventListener("click", selectorPizza);
 ques.addEventListener("click", selectorPizza);
 
-//variables aux para confirmar pedidos
-let auxTamaño, auxPrecio;
 function selecionarTamaño(event) {
     let nuevoprecio;
     const tamañoClickeado = event.currentTarget.id;
@@ -106,7 +108,7 @@ function completarPedido() {
         alert("Pedido confirmado con éxito!");
         if (seccionOpeTamaño.innerHTML == "") {
             document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza} - Tamaño Personal</i><h3>Precio Total: ${precioTotal}€</h3></section>`);
-        } else {    
+        } else {
             if (auxTamaño == "Personal"){
             document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza} - Tamaño Personal</i><h3>Precio Total: ${precioTotal}€</h3></section>`);
             } else {
