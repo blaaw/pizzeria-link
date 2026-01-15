@@ -49,10 +49,10 @@ function selectorPizza(event) {
     precioTotal += precio;
     seccionPedidos.insertAdjacentHTML("beforeend", `<i>Pizzas selecionadas: ${pizza} <br> Precio Total Pedido: ${precioTotal}€ <br>-------------------</i>`);
 }
-barb.addEventListener("dblclick", selectorPizza);
-vege.addEventListener("dblclick", selectorPizza);
-pepp.addEventListener("dblclick", selectorPizza);
-ques.addEventListener("dblclick", selectorPizza);
+barb.addEventListener("click", selectorPizza);
+vege.addEventListener("click", selectorPizza);
+pepp.addEventListener("click", selectorPizza);
+ques.addEventListener("click", selectorPizza);
 
 //variables aux para confirmar pedidos
 let auxTamaño, auxPrecio;
@@ -98,7 +98,7 @@ function añadirTamaño() {
         seccionTamaño.style.display = "flex";
     }
 }
-document.getElementById("add-size").addEventListener("click", añadirTamaño)
+document.getElementById("add-size").addEventListener("dblclick", añadirTamaño)
 
 function completarPedido() {
     if (pizza > 0) {
@@ -106,8 +106,12 @@ function completarPedido() {
         alert("Pedido confirmado con éxito!");
         if (seccionOpeTamaño.innerHTML == "") {
             document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza} - Tamaño Personal</i><h3>Precio Total: ${precioTotal}€</h3></section>`);
-        } else {
+        } else {    
+            if (auxTamaño == "Personal"){
+            document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza} - Tamaño Personal</i><h3>Precio Total: ${precioTotal}€</h3></section>`);
+            } else {
             document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", `<section  style = "display:block;"><h2>Pedido ${pedido}:</h2> <i>Número de Pizzas: ${pizza} -</i> <i>Tamaño ${auxTamaño}</i><h3>Precio Total: ${auxPrecio}€</h3></section>`);
+            }
         }
         borrarPedidoCompleto();
     }

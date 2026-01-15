@@ -93,6 +93,6 @@ section {
 
 .options:hover h2,
 .options:hover i,
-.options:hover p {
+.options:hover h3 {
     color: var(--color1);
 }
