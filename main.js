@@ -90,8 +90,7 @@ function borrarPedidoCompleto() {
     seccionTamaño.style.display = "none";
     seccionOpe.style.display = "none";
     seccionOpeTamaño.innerHTML = "";
-    pizza = 0, precioTotal = 0;
-
+    pizza = 0, precioTotal = 0, auxTamaño = undefined;
 }
 document.getElementById("borrar").addEventListener("dblclick", borrarPedidoCompleto)
 

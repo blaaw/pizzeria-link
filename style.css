@@ -50,7 +50,7 @@ i {
 }
 
 img {
-    width: 30vw;
+    width: 26vw;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -95,4 +95,18 @@ section {
 .options:hover i,
 .options:hover h3 {
     color: var(--color1);
+}
+@media (max-width: 525px) {
+    html {
+        font-size: 8px; 
+    }
+    body {
+        flex-direction: column;
+    }
+    main {
+        justify-content: flex-start;
+    }
+    img {
+        position: static;
+    }
 }
