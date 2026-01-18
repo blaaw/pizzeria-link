@@ -92,14 +92,14 @@ function borrarPedidoCompleto() {
     seccionOpeTamaño.innerHTML = "";
     pizza = 0, precioTotal = 0, auxTamaño = undefined;
 }
-document.getElementById("borrar").addEventListener("dblclick", borrarPedidoCompleto)
+document.getElementById("borrar").addEventListener("click", borrarPedidoCompleto)
 
 function añadirTamaño() {
     if (pizza > 0) {
         seccionTamaño.style.display = "flex";
     }
 }
-document.getElementById("add-size").addEventListener("dblclick", añadirTamaño)
+document.getElementById("add-size").addEventListener("click", añadirTamaño)
 
 function completarPedido() {
     if (pizza > 0) {
@@ -117,4 +117,4 @@ function completarPedido() {
         borrarPedidoCompleto();
     }
 }
-document.getElementById("confirmar").addEventListener("dblclick", completarPedido);
+document.getElementById("confirmar").addEventListener("click", completarPedido);
