@@ -1,6 +1,6 @@
-# 🍕 Pizzería LINK
+# Pizzería*LINK*
 
-**Pizzería LINK** es un pequeño juego de navegador y simulador de pedidos de pizza desarrollado como proyecto personal para aprender JavaScript.
+**Pizzería*LINK*** es un pequeño juego de navegador y simulador de pedidos de pizza desarrollado como proyecto personal para aprender JavaScript.
 
 El proyecto nació durante mis clases de **DAW (Desarrollo de Aplicaciones Web)**, mientras empezábamos a trabajar con JavaScript. Al principio conocía la sintaxis y los conceptos básicos del lenguaje, pero me costaba dar el salto de hacer ejercicios aislados a construir algo que realmente funcionara.
 
